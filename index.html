@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="pageTitle">BDBV-26 · Bundibugyo Ebolavirus 2026 · Independent News Aggregator</title>
+<meta name="description" content="Independent news aggregator about Bundibugyo ebolavirus (BDBV-2026). WHO declared PHEIC 17 May 2026. Not affiliated with WHO, CDC or any health authority. Not medical advice.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="BDBV-26 · Bundibugyo Ebolavirus 2026 · PHEIC Declared 17 May 2026">
+<meta property="og:description" content="Independent news aggregator about Bundibugyo ebolavirus (BDBV), 2026. WHO declared PHEIC 17 May 2026. Not affiliated with any health authority.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:#E03A31; --red-bg:rgba(224,58,49,.10);
+  --amber:#D4891A;
+  --bg:#080A0D; --bg2:#0F1218; --bg3:#161B24;
+  --border:rgba(255,255,255,.07); --border2:rgba(255,255,255,.13);
+  --text:#EAE8E3; --text2:#8A8FA0; --text3:#3E4455;
+  --mono:'IBM Plex Mono',monospace;
+  --serif:'DM Serif Display',serif;
+  --sans:'DM Sans',sans-serif;
+  --radius:4px; --max:840px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* PHEIC BANNER */
+.pheic-banner{background:var(--red-bg);border-bottom:2px solid var(--red);padding:10px 1.5rem;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--red);line-height:1.7}
+.pheic-banner strong{color:#ff6b63;font-weight:600}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle{display:flex;align-items:center;gap:0;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);overflow:hidden;margin-right:10px}
+.lang-toggle button{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:transparent;border:none;padding:6px 12px;cursor:pointer;transition:all .2s}
+.lang-toggle button.active{background:var(--amber);color:var(--bg);font-weight:600}
+.lang-toggle button:hover:not(.active){color:var(--text)}
+
+/* TOP BANNER */
+.top-banner{background:var(--bg3);border-bottom:1px solid var(--amber);padding:8px 1.5rem;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--amber);line-height:1.7}
+.top-banner strong{color:#EAC56A}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:200;background:rgba(8,10,13,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 1.5rem;height:54px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.05em;white-space:nowrap}
+.pdot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.live-tag{font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:.07em;display:flex;align-items:center;gap:5px;font-weight:500}
+.sm-hide{display:inline}
+
+/* LEGAL BUTTON */
+.btn-legal{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);background:transparent;border:1px solid var(--border2);padding:6px 13px;border-radius:var(--radius);cursor:pointer;transition:all .15s;white-space:nowrap}
+.btn-legal:hover{background:var(--bg3);color:var(--text)}
+
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.87);overflow-y:auto;padding:2rem 1rem}
+.overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.mbox{background:var(--bg2);border:1px solid var(--border2);max-width:680px;width:100%;margin:auto;padding:2.5rem 2rem;position:relative}
+.mclose{position:absolute;top:1.2rem;right:1.2rem;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--text2);background:transparent;border:1px solid var(--border);padding:5px 12px;cursor:pointer;border-radius:var(--radius);text-transform:uppercase}
+.mclose:hover{color:var(--text);border-color:var(--border2)}
+.mtitle{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.msec{margin-bottom:1.5rem}
+.msec h3{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.msec p,.msec li{font-size:12px;color:var(--text2);line-height:1.8;margin-bottom:.35rem}
+.msec ul{padding-left:1.1rem}
+.msec a{color:var(--amber)}
+.mfooter{font-family:var(--mono);font-size:10px;color:var(--text3);border-top:1px solid var(--border);padding-top:1rem;line-height:1.7}
+
+/* HERO */
+.hero{max-width:var(--max);margin:0 auto;padding:4.5rem 1.5rem 3.5rem;border-bottom:1px solid var(--border);text-align:center}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--text2);border:1px solid var(--border2);display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:var(--radius);margin-bottom:1.75rem}
+.edot{width:5px;height:5px;border-radius:50%;background:var(--amber)}
+h1{font-family:var(--serif);font-size:clamp(4rem,10vw,7.5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:.4rem}
+h1 em{color:var(--red);font-style:normal}
+.hero-sub{font-family:var(--mono);font-size:11px;letter-spacing:.09em;color:var(--text3);text-transform:uppercase;margin-bottom:2rem;text-align:center}
+.hero-desc{font-size:18px;font-weight:300;color:#9EA4B5;max-width:560px;line-height:1.65;margin:0 auto 2rem;text-align:center}
+.hero-desc strong{color:var(--text);font-weight:500}
+.hero-note{margin-top:1.75rem;font-family:var(--mono);font-size:11px;color:var(--text3);border-top:2px solid var(--border2);padding-top:1rem;line-height:1.7;max-width:560px;margin-left:auto;margin-right:auto;text-align:center}
+
+/* STATS STRIP */
+.stats-strip{border-bottom:1px solid var(--border);background:var(--bg2)}
+.stats-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.scard{background:var(--bg2);padding:1.25rem 1.5rem;text-align:center}
+.slabel{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--text2);margin-bottom:.5rem}
+.sval{font-family:var(--mono);font-size:2.4rem;font-weight:600;line-height:1}
+.sval.r{color:var(--red)} .sval.a{color:var(--amber)}
+.snote{font-size:11px;color:var(--text2);margin-top:.4rem;line-height:1.4}
+.ssrc{font-family:var(--mono);font-size:9px;color:var(--text3);margin-top:.5rem;letter-spacing:.04em}
+.snapshot-tag{max-width:var(--max);margin:0 auto;padding:.6rem 1.5rem;font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:.05em;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center}
+
+/* SECTION HEADER */
+.sec-head{max-width:var(--max);margin:0 auto;padding:2.5rem 1.5rem 1.25rem;display:flex;align-items:center;gap:1rem}
+.sec-title{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--text2);white-space:nowrap}
+.sec-line{flex:1;height:1px;background:var(--border)}
+.sec-badge{font-family:var(--mono);font-size:9px;letter-spacing:.07em;padding:3px 9px;background:var(--red-bg);color:var(--red);border-radius:var(--radius);border:1px solid rgba(224,58,49,.2);white-space:nowrap}
+
+/* NEWS */
+.news-wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem 3rem}
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.ncard{background:var(--bg2);padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:background .15s;cursor:pointer}
+.ncard:hover{background:var(--bg3)}
+.nmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nsrc{font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--text2);text-transform:uppercase}
+.ndot{color:var(--text3);font-size:10px}
+.ndate{font-family:var(--mono);font-size:11px;color:var(--text3)}
+.ntitle{font-size:17px;font-weight:500;line-height:1.4;color:var(--text)}
+.ndesc{font-size:15px;color:var(--text2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nlink{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-top:auto}
+.nlink::after{content:' →'}
+
+/* SKELETON */
+.skel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.skel-card{background:var(--bg2);padding:1.5rem}
+.skel-line{background:var(--bg3);border-radius:2px;margin-bottom:10px;animation:shimmer 1.5s ease-in-out infinite alternate}
+@keyframes shimmer{from{opacity:.4}to{opacity:.8}}
+
+/* SENTINEL */
+#sentinel{height:60px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.loader-txt{font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--text3);text-align:center}
+.spinner{display:inline-block;width:13px;height:13px;border:1.5px solid var(--border2);border-top-color:var(--text2);border-radius:50%;animation:spin .8s linear infinite;margin-right:7px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.err-state{font-family:var(--mono);font-size:12px;color:var(--red);background:var(--red-bg);border:1px solid rgba(224,58,49,.2);padding:1rem 1.5rem;text-align:center;border-radius:var(--radius);margin-top:1px}
+.err-state a{color:var(--red);text-decoration:underline}
+
+/* NOMENCLATURE */
+.nom-wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem 3rem}
+.nom-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--amber);padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.nom-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem}
+.nom-row{display:flex;align-items:baseline;gap:1rem;font-family:var(--mono);font-size:20px;font-weight:600;margin-bottom:.5rem}
+.nom-ok{color:var(--text)} .nom-no{color:var(--text3);font-size:14px;text-decoration:line-through}
+.nom-txt{font-size:13px;color:var(--text2);line-height:1.65}
+.nom-trow{display:flex;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:12px}
+.nom-trow:last-child{border-bottom:none}
+.nom-k{color:var(--text2);min-width:110px} .nom-v{color:var(--amber)}
+
+/* FOOTER */
+.legal-bar{border-top:1px solid var(--border);background:var(--bg2);padding:2rem 1.5rem}
+.legal-bar-inner{max-width:var(--max);margin:0 auto}
+.legal-bar p{font-size:11px;color:var(--text3);line-height:1.8;margin-bottom:.5rem;text-align:center}
+.legal-bar a{color:var(--amber)}
+footer{border-top:1px solid var(--border);background:var(--bg)}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:var(--mono);font-size:12px;font-weight:600}
+.foot-links{display:list-style:none;gap:1.5rem;flex-wrap:wrap;justify-content:center;width:100%}
+.foot-links a{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--text2)}
+.foot-links a:hover{color:var(--text)}
+.foot-copy{width:100%;font-family:var(--mono);font-size:10px;color:var(--text3);border-top:1px solid var(--border);padding-top:1rem;line-height:1.8;text-align:center}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:1fr}
+  .skel-grid{grid-template-columns:1fr}
+  .nom-box{grid-template-columns:1fr}
+  .sm-hide{display:none}
+  .mbox{padding:2rem 1.25rem}
+  .lang-toggle{margin-right:6px}
+  .lang-toggle button{padding:5px 8px;font-size:9px}
+}
+@media(max-width:480px){
+  h1{font-size:3.5rem}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .footer-inner{flex-direction:column;align-items:center}
+  .hero{padding:3rem 1rem 2.5rem}
+}
+
+/* SMOOTH LANG TRANSITION */
+[data-i18n]{transition:opacity .2s ease}
+.lang-fade{opacity:.6}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- PHEIC BANNER -->
+<div class="pheic-banner">
+  <span data-i18n="pheicBanner"><strong>WHO DECLARED PHEIC — 17 MAY 2026</strong> · Public Health Emergency of International Concern · Bundibugyo ebolavirus (BDBV) · DRC & Uganda · WHO PHEIC declared 17 May 2026</span>
+</div>
+
+<!-- TOP DISCLAIMER -->
+<div class="top-banner">
+  <span data-i18n="topBanner"><strong>INDEPENDENT SITE · SITIO INDEPENDIENTE</strong> · Not affiliated with WHO, CDC, ECDC or any health authority · No afiliado a OMS, CDC, ECDC ni ninguna autoridad sanitaria · Only aggregates public news · Solo agrega noticias públicas · Not medical advice · No es consejo médico</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="pdot"></div>
+    BDBV-26.COM
+  </div>
+  <div class="hdr-right">
+    <!-- LANGUAGE TOGGLE -->
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLanguage('en')">EN</button>
+      <button id="btn-es" onclick="setLanguage('es')">ES</button>
+    </div>
+    <div class="live-tag">
+      <div class="pdot"></div>
+      <span class="sm-hide" data-i18n="liveTag">LIVE NEWS</span>
+    </div>
+    <span id="hdr-time" style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.05em" class="sm-hide">–</span>
+    <button class="btn-legal" onclick="openModal()" data-i18n="legalBtn">LEGAL NOTICE</button>
+  </div>
+</header>
+
+<!-- MODAL LEGAL NOTICE -->
+<div class="overlay" id="modal" role="dialog" aria-modal="true" aria-label="Legal Notice">
+  <div class="mbox">
+    <button class="mclose" onclick="closeModal()" data-i18n="modalClose">✕ CLOSE</button>
+    <div class="mtitle" data-i18n="modalTitle">LEGAL NOTICE · AVISO LEGAL · BDBV-26.COM</div>
+
+    <div class="msec">
+      <h3 data-i18n="m1h">1. About this site / Sobre este sitio</h3>
+      <p data-i18n="m1p1">BDBV-26.com is a privately owned domain operated as an independent aggregator of publicly available news about the Bundibugyo ebolavirus (BDBV) outbreak in the Democratic Republic of the Congo and Uganda, 2026. It is <strong>not affiliated with, endorsed by, or associated with WHO, CDC, ECDC or any health authority.</strong></p>
+      <p data-i18n="m1p2">BDBV-26.com es un dominio privado operado como agregador independiente de noticias públicas sobre el brote de ebolavirus Bundibugyo (BDBV) en la República Democrática del Congo y Uganda en 2026. <strong>No está afiliado, patrocinado ni asociado con la Organización Mundial de la Salud (OMS), los Centros para el Control de Enfermedades de EE.UU. (CDC), el Centro Europeo para la Prevención y Control de Enfermedades (ECDC) ni con ninguna otra autoridad sanitaria nacional o internacional.</strong></p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m2h">2. PHEIC declared / PHEIC declarada</h3>
+      <p data-i18n="m2p1">On <strong>17 May 2026, the WHO declared a Public Health Emergency of International Concern (PHEIC)</strong> relating to the Ebola-Bundibugyo strain epidemic in the Democratic Republic of the Congo and Uganda. This site reflects that declaration and aggregates publicly available information. Always consult <a href="https://www.who.int" target="_blank" rel="noopener">who.int</a> for official updates.</p>
+      <p data-i18n="m2p2">El <strong>17 de mayo de 2026, la OMS declaró una Emergencia de Salud Pública de Importancia Internacional (PHEIC)</strong> en relación con la epidemia de la cepa Ebola-Bundibugyo en la República Democrática del Congo y Uganda. Este sitio refleja dicha declaración y agrega información disponible públicamente. Consulte siempre <a href="https://www.who.int" target="_blank" rel="noopener">who.int</a> para actualizaciones oficiales.</p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m3h">3. Medical disclaimer / Exención de responsabilidad sanitaria</h3>
+      <p data-i18n="m3p1">The content of this site is provided <strong>for informational purposes only</strong> and does not constitute medical advice, diagnosis, treatment or any health recommendation. In case of symptoms or medical emergency, contact your doctor or call <strong>112</strong>. For official health information consult <a href="https://www.who.int" target="_blank" rel="noopener">who.int</a>, <a href="https://www.cdc.gov" target="_blank" rel="noopener">cdc.gov</a> or your national health authority.</p>
+      <p data-i18n="m3p2">El contenido de este sitio se proporciona <strong>exclusivamente con fines informativos</strong> y no constituye consejo médico, diagnóstico, tratamiento ni recomendación sanitaria de ningún tipo. Ante cualquier síntoma o emergencia médica, contacte con su médico o llame al <strong>112</strong>. Para información sanitaria oficial consulte <a href="https://www.who.int" target="_blank" rel="noopener">who.int</a>, <a href="https://www.cdc.gov" target="_blank" rel="noopener">cdc.gov</a> o el <a href="https://www.mscbs.gob.es" target="_blank" rel="noopener">Ministerio de Sanidad de España</a>.</p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m4h">4. Cookie policy / Política de cookies</h3>
+      <p data-i18n="m4p1">This website <strong>does not use cookies of any kind</strong>: neither technical, analytical, advertising, nor third-party. No tracking element is installed on the user's device. No cookie consent banner is required because none are used.</p>
+      <p data-i18n="m4p2">Cumplimiento: <strong>RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · Directiva ePrivacy 2002/58/CE</strong>.</p>
+      <p data-i18n="m4p3">This site uses no cookies of any kind — no analytics, no advertising, no third-party trackers. No cookie consent is required because none are used.</p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m5h">5. Privacy & personal data / Privacidad y datos personales</h3>
+      <p data-i18n="m5p1">This site <strong>does not collect, store or process personal data</strong> from any visitor. There are no registration forms, login systems, analytics tools or tracking pixels. The news feed is obtained directly from the visitor's browser via a public API (Google News RSS via open CORS proxy); no user data passes through servers controlled by the owner of this domain.</p>
+      <p data-i18n="m5p2">Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPD-GDD) y el Reglamento (UE) 2016/679 (RGPD), no se realiza ninguna actividad de tratamiento de datos personales en este sitio.</p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m6h">6. Third-party content / Contenido de terceros</h3>
+      <p data-i18n="m6p1">All news shown are links to articles published by third parties (media outlets, public agencies, etc.). This site does not write, edit or verify the content of linked articles. The owner is not responsible for the truthfulness, timeliness or accuracy of the content of linked websites, which is the sole responsibility of their respective editors.</p>
+      <p data-i18n="m6p2">Todas las noticias mostradas son enlaces a artículos publicados por terceros (medios de comunicación, organismos públicos, etc.). Este sitio no redacta, edita ni verifica el contenido de los artículos enlazados. El titular no se hace responsable de la veracidad, actualidad o exactitud del contenido de los sitios web enlazados, que son responsabilidad exclusiva de sus respectivos editores.</p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m7h">7. Non-commercial status / Naturaleza no comercial</h3>
+      <p data-i18n="m7p1">This website is a strictly personal, non-profit project that generates no direct or indirect income and carries out no economic activity. Therefore, it falls outside the scope of the Spanish Law 34/2002 (LSSI-CE) regarding the obligation to publish full identifying data. For any contact or content removal requests, please reach out to: yes@bdbv-26.com.</p>
+      <p data-i18n="m7p2">Este sitio web es un proyecto estrictamente personal y sin ánimo de lucro que no genera ingresos directos ni indirectos, ni ejerce actividad económica alguna. Por tanto, queda excluido del ámbito de aplicación de la Ley 34/2002 (LSSI-CE) en lo relativo a la obligación de publicar datos identificativos completos (DNI/dirección). Para cualquier contacto o solicitud de retirada de contenido, puede escribir a: yes@bdbv-26.com.</p>
+    </div>
+
+    <div class="msec">
+      <h3 data-i18n="m8h">8. Scientific nomenclature / Nomenclatura científica</h3>
+      <p data-i18n="m8p1">The domain name BDBV-26.com uses the established scientific abbreviation "BDBV" (Bundibugyo ebolavirus), widely documented in international peer-reviewed literature, followed by the year 2026, following the WHO disease nomenclature standard (example: COVID-19, SARS-CoV-2). The registration of this domain is speculative and informational in nature and does not imply any claim of ownership over said nomenclature.</p>
+      <p data-i18n="m8p2">El nombre de dominio BDBV-26.com utiliza la abreviatura científica establecida «BDBV» (Bundibugyo ebolavirus), ampliamente documentada en la literatura médica internacional, seguida del año 2026, siguiendo el estándar de nomenclatura de enfermedades de la OMS (ejemplo: COVID-19, SARS-CoV-2). El registro de este dominio es de carácter especulativo e informativo y no implica ninguna reclamación de titularidad sobre dicha nomenclatura.</p>
+    </div>
+
+    <div class="mfooter" data-i18n="mFooter">
+      Last updated: 17 May 2026 · BDBV-26.COM · All rights reserved · RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · ePrivacy 2002/58/CE
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">
+    <div class="edot"></div>
+    <span data-i18n="heroEyebrow">Bundibugyo Ebolavirus 2026 (BDBV-26) · PHEIC Declared 17 May 2026</span>
+  </div>
+  <h1 data-i18n-html="heroTitle">BDBV<em>-26</em></h1>
+  <div class="hero-sub" data-i18n="heroSub">BUNDIBUGYO EBOLAVIRUS · WHO PHEIC 17 MAY 2026 · DRC & UGANDA OUTBREAK · INDEPENDENT NEWS AGGREGATOR</div>
+  <p class="hero-desc" data-i18n="heroDesc">
+    Independent aggregator that collects <strong>news and public reports</strong>
+    on the Bundibugyo ebolavirus (BDBV-26) outbreak in Ituri Province, DRC and Kampala, Uganda.
+    All contents from public health agencies and international media.
+  </p>
+  <div class="hero-note" data-i18n="heroNote">
+    This site does not produce its own content. It aggregates links to public sources.
+    WHO declared a PHEIC on 17 May 2026. The situation is evolving — always consult official sources.
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="scard">
+      <div class="slabel" data-i18n="s1label">Laboratory-confirmed</div>
+      <div class="sval r">8</div>
+      <div class="snote" data-i18n="s1note">Ituri Province, DRC</div>
+      <div class="ssrc" data-i18n="s1src">Source: WHO PHEIC statement · 17 May 2026</div>
+    </div>
+    <div class="scard">
+      <div class="slabel" data-i18n="s2label">Suspected cases</div>
+      <div class="sval a">246</div>
+      <div class="snote" data-i18n="s2note">Across DRC & Uganda</div>
+      <div class="ssrc" data-i18n="s2src">Source: WHO · 16 May 2026</div>
+    </div>
+    <div class="scard">
+      <div class="slabel" data-i18n="s3label">Suspected deaths</div>
+      <div class="sval r">80</div>
+      <div class="snote" data-i18n="s3note">Ituri Province clusters</div>
+      <div class="ssrc" data-i18n="s3src">Source: WHO · 16 May 2026</div>
+    </div>
+    <div class="scard">
+      <div class="slabel" data-i18n="s4label">Countries affected</div>
+      <div class="sval a">2</div>
+      <div class="snote" data-i18n="s4note">DRC & Uganda</div>
+      <div class="ssrc" data-i18n="s4src">Source: WHO PHEIC · 17 May 2026</div>
+    </div>
+  </div>
+</div>
+<div class="snapshot-tag" data-i18n="snapshotTag">ⓘ Data snapshot as of 16-17 May 2026 · Does not auto-update · For current data consult who.int</div>
+
+<!-- NEWS SECTION -->
+<div class="sec-head">
+  <span class="sec-title" data-i18n="newsTitle">Live news feed · Google News RSS · Auto-updated</span>
+  <div class="sec-line"></div>
+  <span class="sec-badge">↻ LIVE</span>
+</div>
+
+<div class="news-wrap">
+  <!-- SKELETON -->
+  <div class="skel-grid" id="skeleton">
+    <div class="skel-card">
+      <div class="skel-line" style="height:10px;width:40%"></div>
+      <div class="skel-line" style="height:16px;width:90%"></div>
+      <div class="skel-line" style="height:16px;width:70%"></div>
+      <div class="skel-line" style="height:11px;width:50%;margin-top:6px"></div>
+    </div>
+    <div class="skel-card">
+      <div class="skel-line" style="height:10px;width:35%"></div>
+      <div class="skel-line" style="height:16px;width:85%"></div>
+      <div class="skel-line" style="height:16px;width:65%"></div>
+      <div class="skel-line" style="height:11px;width:45%;margin-top:6px"></div>
+    </div>
+    <div class="skel-card">
+      <div class="skel-line" style="height:10px;width:50%"></div>
+      <div class="skel-line" style="height:16px;width:92%"></div>
+      <div class="skel-line" style="height:16px;width:75%"></div>
+      <div class="skel-line" style="height:11px;width:40%;margin-top:6px"></div>
+    </div>
+    <div class="skel-card">
+      <div class="skel-line" style="height:10px;width:30%"></div>
+      <div class="skel-line" style="height:16px;width:88%"></div>
+      <div class="skel-line" style="height:16px;width:60%"></div>
+      <div class="skel-line" style="height:11px;width:55%;margin-top:6px"></div>
+    </div>
+  </div>
+
+  <!-- NEWS GRID (JS-populated) -->
+  <div class="news-grid" id="news-grid" style="display:none"></div>
+
+  <!-- INFINITE SCROLL SENTINEL -->
+  <div id="sentinel"><div class="loader-txt" id="loader-txt"></div></div>
+</div>
+
+<!-- NOMENCLATURE SECTION -->
+<div class="sec-head">
+  <span class="sec-title" data-i18n="nomTitle">Why BDBV-26 · Nomenclature reference</span>
+  <div class="sec-line"></div>
+</div>
+<div class="nom-wrap">
+  <div class="nom-box">
+    <div>
+      <div class="nom-lbl" data-i18n="nomStandard">WHO nomenclature standard</div>
+      <div class="nom-row">
+        <span class="nom-ok">BDBV-26</span>
+        <span class="nom-no">bdbv26</span>
+      </div>
+      <p class="nom-txt" data-i18n="nomTxt1">
+        The WHO and international scientific bodies name emerging diseases using the pathogen abbreviation followed by a hyphen and the year of appearance. BDBV is the established abbreviation for <em>Bundibugyo ebolavirus</em> in peer-reviewed literature. The hyphen is not stylistic — it is the standard separator in all WHO disease identifiers.
+      </p>
+    </div>
+    <div>
+      <div class="nom-lbl" data-i18n="nomPrecedent">WHO nomenclature precedent</div>
+      <div style="margin-top:.25rem">
+        <div class="nom-trow"><span class="nom-k">Coronavirus</span><span class="nom-v">COVID-19 ✓</span></div>
+        <div class="nom-trow"><span class="nom-k">SARS coronavirus</span><span class="nom-v">SARS-CoV-2 ✓</span></div>
+        <div class="nom-trow"><span class="nom-k">Bundibugyo ebolavirus</span><span class="nom-v">BDBV-26 ✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL SUMMARY BAR -->
+<div class="legal-bar">
+  <div class="legal-bar-inner">
+    <p data-i18n="legalP1"><strong style="color:var(--text2)">No cookies · No tracking · No personal data</strong> — RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · Directive ePrivacy 2002/58/CE</p>
+    <p data-i18n="legalP2">This site does not collect, store or process personal data of any kind. No cookies are installed. The news feed loads directly in your browser from public sources. For the full legal notice click <button onclick="openModal()" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:var(--mono);font-size:11px;text-decoration:underline;padding:0">LEGAL NOTICE</button>.</p>
+    <p style="color:var(--text3)" data-i18n="legalP3">Official sources: <a href="https://www.who.int" target="_blank" rel="noopener">who.int</a> · <a href="https://www.cdc.gov" target="_blank" rel="noopener">cdc.gov</a> · <a href="https://www.ecdc.europa.eu" target="_blank" rel="noopener">ecdc.europa.eu</a> · <a href="https://www.mscbs.gob.es" target="_blank" rel="noopener">mscbs.gob.es</a> · Emergency: 112</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="foot-logo">BDBV-26.COM</div>
+    <ul class="foot-links">
+      <li><a href="https://www.who.int/emergencies/disease-outbreak-news" target="_blank" rel="noopener">WHO DON</a></li>
+      <li><a href="https://www.cdc.gov" target="_blank" rel="noopener">CDC</a></li>
+      <li><a href="https://www.ecdc.europa.eu" target="_blank" rel="noopener">ECDC</a></li>
+      <li><a href="mailto:yes@bdbv-26.com" data-i18n="contact">Contact</a></li>
+      <li><button onclick="openModal()" style="background:none;border:none;color:var(--text2);cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:0" data-i18n="footerLegal">Legal Notice</button></li>
+    </ul>
+    <div class="foot-copy" data-i18n="footCopy">
+      Independent public news aggregator · Not affiliated with any health authority ·
+      No cookies · No personal data · RGPD / LOPD-GDD 3/2018 · Not medical advice ·
+      WHO declared PHEIC for BDBV on 17 May 2026 ·
+      All linked content © respective publishers ·
+      © 2026 BDBV-26.COM
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+(function(){
+'use strict';
+
+/* ── TRANSLATIONS ────────────────────────────────── */
+var i18n = {
+  en: {
+    pageTitle: "BDBV-26 · Bundibugyo Ebolavirus 2026 · Independent News Aggregator",
+    pheicBanner: "<strong>WHO DECLARED PHEIC — 17 MAY 2026</strong> · Public Health Emergency of International Concern · Bundibugyo ebolavirus (BDBV) · DRC & Uganda · WHO PHEIC declared 17 May 2026",
+    topBanner: "<strong>INDEPENDENT SITE · SITIO INDEPENDIENTE</strong> · Not affiliated with WHO, CDC, ECDC or any health authority · No afiliado a OMS, CDC, ECDC ni ninguna autoridad sanitaria · Only aggregates public news · Solo agrega noticias públicas · Not medical advice · No es consejo médico",
+    liveTag: "LIVE NEWS",
+    legalBtn: "LEGAL NOTICE",
+    modalClose: "✕ CLOSE",
+    modalTitle: "LEGAL NOTICE · AVISO LEGAL · BDBV-26.COM",
+    m1h: "1. About this site / Sobre este sitio",
+    m1p1: "BDBV-26.com is a privately owned domain operated as an independent aggregator of publicly available news about the Bundibugyo ebolavirus (BDBV) outbreak in the Democratic Republic of the Congo and Uganda, 2026. It is <strong>not affiliated with, endorsed by, or associated with WHO, CDC, ECDC or any health authority.</strong>",
+    m1p2: "BDBV-26.com es un dominio privado operado como agregador independiente de noticias públicas sobre el brote de ebolavirus Bundibugyo (BDBV) en la República Democrática del Congo y Uganda en 2026. <strong>No está afiliado, patrocinado ni asociado con la Organización Mundial de la Salud (OMS), los Centros para el Control de Enfermedades de EE.UU. (CDC), el Centro Europeo para la Prevención y Control de Enfermedades (ECDC) ni con ninguna otra autoridad sanitaria nacional o internacional.</strong>",
+    m2h: "2. PHEIC declared / PHEIC declarada",
+    m2p1: "On <strong>17 May 2026, the WHO declared a Public Health Emergency of International Concern (PHEIC)</strong> relating to the Ebola-Bundibugyo strain epidemic in the Democratic Republic of the Congo and Uganda. This site reflects that declaration and aggregates publicly available information. Always consult <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a> for official updates.",
+    m2p2: "El <strong>17 de mayo de 2026, la OMS declaró una Emergencia de Salud Pública de Importancia Internacional (PHEIC)</strong> en relación con la epidemia de la cepa Ebola-Bundibugyo en la República Democrática del Congo y Uganda. Este sitio refleja dicha declaración y agrega información disponible públicamente. Consulte siempre <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a> para actualizaciones oficiales.",
+    m3h: "3. Medical disclaimer / Exención de responsabilidad sanitaria",
+    m3p1: "The content of this site is provided <strong>for informational purposes only</strong> and does not constitute medical advice, diagnosis, treatment or any health recommendation. In case of symptoms or medical emergency, contact your doctor or call <strong>112</strong>. For official health information consult <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a>, <a href=\"https://www.cdc.gov\" target=\"_blank\" rel=\"noopener\">cdc.gov</a> or your national health authority.",
+    m3p2: "El contenido de este sitio se proporciona <strong>exclusivamente con fines informativos</strong> y no constituye consejo médico, diagnóstico, tratamiento ni recomendación sanitaria de ningún tipo. Ante cualquier síntoma o emergencia médica, contacte con su médico o llame al <strong>112</strong>. Para información sanitaria oficial consulte <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a>, <a href=\"https://www.cdc.gov\" target=\"_blank\" rel=\"noopener\">cdc.gov</a> o el <a href=\"https://www.mscbs.gob.es\" target=\"_blank\" rel=\"noopener\">Ministerio de Sanidad de España</a>.",
+    m4h: "4. Cookie policy / Política de cookies",
+    m4p1: "This website <strong>does not use cookies of any kind</strong>: neither technical, analytical, advertising, nor third-party. No tracking element is installed on the user's device. No cookie consent banner is required because none are used.",
+    m4p2: "Cumplimiento: <strong>RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · Directiva ePrivacy 2002/58/CE</strong>.",
+    m4p3: "This site uses no cookies of any kind — no analytics, no advertising, no third-party trackers. No cookie consent is required because none are used.",
+    m5h: "5. Privacy & personal data / Privacidad y datos personales",
+    m5p1: "This site <strong>does not collect, store or process personal data</strong> from any visitor. There are no registration forms, login systems, analytics tools or tracking pixels. The news feed is obtained directly from the visitor's browser via a public API (Google News RSS via open CORS proxy); no user data passes through servers controlled by the owner of this domain.",
+    m5p2: "Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPD-GDD) y el Reglamento (UE) 2016/679 (RGPD), no se realiza ninguna actividad de tratamiento de datos personales en este sitio.",
+    m6h: "6. Third-party content / Contenido de terceros",
+    m6p1: "All news shown are links to articles published by third parties (media outlets, public agencies, etc.). This site does not write, edit or verify the content of linked articles. The owner is not responsible for the truthfulness, timeliness or accuracy of the content of linked websites, which is the sole responsibility of their respective editors.",
+    m6p2: "Todas las noticias mostradas son enlaces a artículos publicados por terceros (medios de comunicación, organismos públicos, etc.). Este sitio no redacta, edita ni verifica el contenido de los artículos enlazados. El titular no se hace responsable de la veracidad, actualidad o exactitud del contenido de los sitios web enlazados, que son responsabilidad exclusiva de sus respectivos editores.",
+    m7h: "7. Non-commercial status / Naturaleza no comercial",
+    m7p1: "This website is a strictly personal, non-profit project that generates no direct or indirect income and carries out no economic activity. Therefore, it falls outside the scope of the Spanish Law 34/2002 (LSSI-CE) regarding the obligation to publish full identifying data. For any contact or content removal requests, please reach out to: yes@bdbv-26.com.",
+    m7p2: "Este sitio web es un proyecto estrictamente personal y sin ánimo de lucro que no genera ingresos directos ni indirectos, ni ejerce actividad económica alguna. Por tanto, queda excluido del ámbito de aplicación de la Ley 34/2002 (LSSI-CE) en lo relativo a la obligación de publicar datos identificativos completos (DNI/dirección). Para cualquier contacto o solicitud de retirada de contenido, puede escribir a: yes@bdbv-26.com.",
+    m8h: "8. Scientific nomenclature / Nomenclatura científica",
+    m8p1: "The domain name BDBV-26.com uses the established scientific abbreviation \"BDBV\" (Bundibugyo ebolavirus), widely documented in international peer-reviewed literature, followed by the year 2026, following the WHO disease nomenclature standard (example: COVID-19, SARS-CoV-2). The registration of this domain is speculative and informational in nature and does not imply any claim of ownership over said nomenclature.",
+    m8p2: "El nombre de dominio BDBV-26.com utiliza la abreviatura científica establecida «BDBV» (Bundibugyo ebolavirus), ampliamente documentada en la literatura médica internacional, seguida del año 2026, siguiendo el estándar de nomenclatura de enfermedades de la OMS (ejemplo: COVID-19, SARS-CoV-2). El registro de este dominio es de carácter especulativo e informativo y no implica ninguna reclamación de titularidad sobre dicha nomenclatura.",
+    mFooter: "Last updated: 17 May 2026 · BDBV-26.COM · All rights reserved · RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · ePrivacy 2002/58/CE",
+    heroEyebrow: "Bundibugyo Ebolavirus 2026 (BDBV-26) · PHEIC Declared 17 May 2026",
+    heroTitle: "BDBV<em>-26</em>",
+    heroSub: "BUNDIBUGYO EBOLAVIRUS · WHO PHEIC 17 MAY 2026 · DRC & UGANDA OUTBREAK · INDEPENDENT NEWS AGGREGATOR",
+    heroDesc: "Independent aggregator that collects <strong>news and public reports</strong> on the Bundibugyo ebolavirus (BDBV-26) outbreak in Ituri Province, DRC and Kampala, Uganda. All contents from public health agencies and international media.",
+    heroNote: "This site does not produce its own content. It aggregates links to public sources. WHO declared a PHEIC on 17 May 2026. The situation is evolving — always consult official sources.<br>Statistics: snapshot recorded 16-17 May 2026. Not auto-updated.",
+    s1label: "Laboratory-confirmed",
+    s1note: "Ituri Province, DRC",
+    s1src: "Source: WHO PHEIC statement · 17 May 2026",
+    s2label: "Suspected cases",
+    s2note: "Across DRC & Uganda",
+    s2src: "Source: WHO · 16 May 2026",
+    s3label: "Suspected deaths",
+    s3note: "Ituri Province clusters",
+    s3src: "Source: WHO · 16 May 2026",
+    s4label: "Countries affected",
+    s4note: "DRC & Uganda",
+    s4src: "Source: WHO PHEIC · 17 May 2026",
+    snapshotTag: "ⓘ Data snapshot as of 16-17 May 2026 · Does not auto-update · For current data consult who.int",
+    newsTitle: "Live news feed · Google News RSS · Auto-updated",
+    nomTitle: "Why BDBV-26 · Nomenclature reference",
+    nomStandard: "WHO nomenclature standard",
+    nomPrecedent: "WHO nomenclature precedent",
+    nomTxt1: "The WHO and international scientific bodies name emerging diseases using the pathogen abbreviation followed by a hyphen and the year of appearance. BDBV is the established abbreviation for <em>Bundibugyo ebolavirus</em> in peer-reviewed literature. The hyphen is not stylistic — it is the standard separator in all WHO disease identifiers.",
+    legalP1: "<strong style=\"color:var(--text2)\">No cookies · No tracking · No personal data</strong> — RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · Directive ePrivacy 2002/58/CE",
+    legalP2: "This site does not collect, store or process personal data of any kind. No cookies are installed. The news feed loads directly in your browser from public sources. For the full legal notice click <button onclick=\"openModal()\" style=\"background:none;border:none;color:var(--amber);cursor:pointer;font-family:var(--mono);font-size:11px;text-decoration:underline;padding:0\">LEGAL NOTICE</button>.",
+    legalP3: "Official sources: <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a> · <a href=\"https://www.cdc.gov\" target=\"_blank\" rel=\"noopener\">cdc.gov</a> · <a href=\"https://www.ecdc.europa.eu\" target=\"_blank\" rel=\"noopener\">ecdc.europa.eu</a> · <a href=\"https://www.mscbs.gob.es\" target=\"_blank\" rel=\"noopener\">mscbs.gob.es</a> · Emergency: 112",
+    contact: "Contact",
+    footerLegal: "Legal Notice",
+    footCopy: "Independent public news aggregator · Not affiliated with any health authority · No cookies · No personal data · RGPD / LOPD-GDD 3/2018 · Not medical advice · WHO declared PHEIC for BDBV on 17 May 2026 · Statistics: snapshot 16-17 May 2026, not automatic · All linked content © respective publishers · © 2026 BDBV-26.COM",
+    loadingNews: "<span class=\"spinner\"></span>Loading news...",
+    allShown: "All results shown · Reload page for latest news",
+    allShown2: "All results shown · Reload to update",
+    readArticle: "Read full article",
+    noNews: "No news found. Reload the page or check <a href=\"https://news.google.com/search?q=Bundibugyo+ebolavirus+BDBV+2026\" target=\"_blank\" rel=\"noopener\">Google News</a> directly.",
+    loadError: "Could not load news feed. This may be a temporary network issue.<br>Reload the page or visit <a href=\"https://news.google.com/search?q=Bundibugyo+ebolavirus+BDBV+2026\" target=\"_blank\" rel=\"noopener\">Google News directly</a>."
+  },
+  es: {
+    pageTitle: "BDBV-26 · Ebolavirus Bundibugyo 2026 · Agregador Independiente de Noticias",
+    pheicBanner: "<strong>OMS DECLARÓ PHEIC — 17 MAYO 2026</strong> · Emergencia de Salud Pública de Importancia Internacional · Ebolavirus Bundibugyo (BDBV) · RDC y Uganda · OMS PHEIC declarado 17 mayo 2026",
+    topBanner: "<strong>SITIO INDEPENDIENTE · INDEPENDENT SITE</strong> · No afiliado a OMS, CDC, ECDC ni ninguna autoridad sanitaria · Not affiliated with WHO, CDC, ECDC or any health authority · Solo agrega noticias públicas · Only aggregates public news · No es consejo médico · Not medical advice",
+    liveTag: "NOTICIAS EN VIVO",
+    legalBtn: "AVISO LEGAL",
+    modalClose: "✕ CERRAR",
+    modalTitle: "AVISO LEGAL · LEGAL NOTICE · BDBV-26.COM",
+    m1h: "1. Sobre este sitio / About this site",
+    m1p1: "BDBV-26.com es un dominio privado operado como agregador independiente de noticias públicas sobre el brote de ebolavirus Bundibugyo (BDBV) en la República Democrática del Congo y Uganda en 2026. <strong>No está afiliado, patrocinado ni asociado con la Organización Mundial de la Salud (OMS), los Centros para el Control de Enfermedades de EE.UU. (CDC), el Centro Europeo para la Prevención y Control de Enfermedades (ECDC) ni con ninguna otra autoridad sanitaria nacional o internacional.</strong>",
+    m1p2: "BDBV-26.com is a privately owned domain operated as an independent aggregator of publicly available news about the Bundibugyo ebolavirus (BDBV) outbreak in the Democratic Republic of the Congo and Uganda, 2026. It is not affiliated with, endorsed by, or associated with WHO, CDC, ECDC or any health authority.",
+    m2h: "2. PHEIC declarada / PHEIC declared",
+    m2p1: "El <strong>17 de mayo de 2026, la OMS declaró una Emergencia de Salud Pública de Importancia Internacional (PHEIC)</strong> en relación con la epidemia de la cepa Ebola-Bundibugyo en la República Democrática del Congo y Uganda. Este sitio refleja dicha declaración y agrega información disponible públicamente. Consulte siempre <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a> para actualizaciones oficiales.",
+    m2p2: "On <strong>17 May 2026, the WHO declared a Public Health Emergency of International Concern (PHEIC)</strong> relating to the Ebola-Bundibugyo strain epidemic in the Democratic Republic of the Congo and Uganda. This site reflects that declaration and aggregates publicly available information. Always consult <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a> for official updates.",
+    m3h: "3. Exención de responsabilidad sanitaria / Medical disclaimer",
+    m3p1: "El contenido de este sitio se proporciona <strong>exclusivamente con fines informativos</strong> y no constituye consejo médico, diagnóstico, tratamiento ni recomendación sanitaria de ningún tipo. Ante cualquier síntoma o emergencia médica, contacte con su médico o llame al <strong>112</strong>. Para información sanitaria oficial consulte <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a>, <a href=\"https://www.cdc.gov\" target=\"_blank\" rel=\"noopener\">cdc.gov</a> o el <a href=\"https://www.mscbs.gob.es\" target=\"_blank\" rel=\"noopener\">Ministerio de Sanidad de España</a>.",
+    m3p2: "The content of this site is provided for informational purposes only and does not constitute medical advice, diagnosis, treatment or any health recommendation. In case of symptoms or medical emergency, contact your doctor or call 112. For official health information consult who.int, cdc.gov or your national health authority.",
+    m4h: "4. Política de cookies / Cookie policy",
+    m4p1: "Este sitio web <strong>no utiliza cookies de ningún tipo</strong>: ni técnicas, ni analíticas, ni publicitarias, ni de terceros. No se instala ningún elemento de seguimiento en el dispositivo del usuario. No se requiere banner de consentimiento de cookies porque no se usan.",
+    m4p2: "Cumplimiento: <strong>RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · Directiva ePrivacy 2002/58/CE</strong>.",
+    m4p3: "This site uses no cookies of any kind — no analytics, no advertising, no third-party trackers. No cookie consent is required because none are used.",
+    m5h: "5. Privacidad y datos personales / Privacy & personal data",
+    m5p1: "Este sitio <strong>no recopila, almacena ni procesa datos personales</strong> de ningún visitante. No existen formularios de registro, sistemas de login, herramientas de analítica ni píxeles de seguimiento. El feed de noticias se obtiene directamente desde el navegador del visitante mediante una API pública (Google News RSS vía proxy CORS abierto); ningún dato del usuario pasa por servidores controlados por el titular de este dominio.",
+    m5p2: "Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPD-GDD) y el Reglamento (UE) 2016/679 (RGPD), no se realiza ninguna actividad de tratamiento de datos personales en este sitio.",
+    m6h: "6. Contenido de terceros / Third-party content",
+    m6p1: "Todas las noticias mostradas son enlaces a artículos publicados por terceros (medios de comunicación, organismos públicos, etc.). Este sitio no redacta, edita ni verifica el contenido de los artículos enlazados. El titular no se hace responsable de la veracidad, actualidad o exactitud del contenido de los sitios web enlazados, que son responsabilidad exclusiva de sus respectivos editores.",
+    m6p2: "All news shown are links to articles published by third parties (media outlets, public agencies, etc.). This site does not write, edit or verify the content of linked articles. The owner is not responsible for the truthfulness, timeliness or accuracy of the content of linked websites, which is the sole responsibility of their respective editors.",
+    m7h: "7. Non-commercial status / Naturaleza no comercial",
+    m7p1: "Este sitio web es un proyecto estrictamente personal y sin ánimo de lucro que no genera ingresos directos ni indirectos, ni ejerce actividad económica alguna. Por tanto, queda excluido del ámbito de aplicación de la Ley 34/2002 (LSSI-CE) en lo relativo a la obligación de publicar datos identificativos completos (DNI/dirección). Para cualquier contacto o solicitud de retirada de contenido, puede escribir a: yes@bdbv-26.com.",
+    m7p2: "This website is a strictly personal, non-profit project that generates no direct or indirect income and carries out no economic activity. Therefore, it falls outside the scope of the Spanish Law 34/2002 (LSSI-CE) regarding the obligation to publish full identifying data. For any contact or content removal requests, please reach out to: yes@bdbv-26.com.",
+    m8h: "8. Nomenclatura científica / Scientific nomenclature",
+    m8p1: "El nombre de dominio BDBV-26.com utiliza la abreviatura científica establecida «BDBV» (Bundibugyo ebolavirus), ampliamente documentada en la literatura médica internacional, seguida del año 2026, siguiendo el estándar de nomenclatura de enfermedades de la OMS (ejemplo: COVID-19, SARS-CoV-2). El registro de este dominio es de carácter especulativo e informativo y no implica ninguna reclamación de titularidad sobre dicha nomenclatura.",
+    m8p2: "The domain name BDBV-26.com uses the established scientific abbreviation \"BDBV\" (Bundibugyo ebolavirus), widely documented in international peer-reviewed literature, followed by the year 2026, following the WHO disease nomenclature standard (example: COVID-19, SARS-CoV-2). The registration of this domain is speculative and informational in nature and does not imply any claim of ownership over said nomenclature.",
+    mFooter: "Última actualización: 17 mayo 2026 · BDBV-26.COM · Todos los derechos reservados · RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · ePrivacy 2002/58/CE",
+    heroEyebrow: "Ebolavirus Bundibugyo 2026 (BDBV-26) · PHEIC Declarado 17 Mayo 2026",
+    heroTitle: "BDBV<em>-26</em>",
+    heroSub: "EBOLAVIRUS BUNDIBUGYO · OMS PHEIC 17 MAYO 2026 · BROTE RDC Y UGANDA · AGREGADOR INDEPENDIENTE DE NOTICIAS",
+    heroDesc: "Agregador independiente que recopila <strong>noticias y reportes públicos</strong> sobre el brote de ebolavirus Bundibugyo (BDBV-26) en la provincia de Ituri, RDC y Kampala, Uganda. Todo el contenido procede de organismos de salud pública y medios internacionales.",
+    heroNote: "Este sitio no produce contenido propio. Agrega enlaces a fuentes públicas. La OMS declaró PHEIC el 17 de mayo de 2026. La situación está evolucionando — consulte siempre fuentes oficiales.<br>Estadísticas: instantánea registrada el 16-17 de mayo de 2026. No se actualizan automáticamente.",
+    s1label: "Confirmados laboratorio",
+    s1note: "Provincia Ituri, RDC",
+    s1src: "Fuente: OMS declaración PHEIC · 17 may 2026",
+    s2label: "Casos sospechosos",
+    s2note: "RDC y Uganda",
+    s2src: "Fuente: OMS · 16 may 2026",
+    s3label: "Muertes sospechadas",
+    s3note: "Clústeres Provincia Ituri",
+    s3src: "Fuente: OMS · 16 may 2026",
+    s4label: "Países afectados",
+    s4note: "RDC y Uganda",
+    s4src: "Fuente: OMS PHEIC · 17 may 2026",
+    snapshotTag: "ⓘ Instantánea de datos registrada el 16-17 mayo 2026 · No se actualiza automáticamente · Para datos actualizados consulte who.int",
+    newsTitle: "Feed de noticias en vivo · Google News RSS · Auto-actualizado",
+    nomTitle: "Por qué BDBV-26 · Referencia de nomenclatura",
+    nomStandard: "Estándar de nomenclatura OMS",
+    nomPrecedent: "Precedente de nomenclatura OMS",
+    nomTxt1: "La OMS y los organismos científicos internacionales denominan las enfermedades emergentes usando la abreviatura del patógeno seguida de un guión y el año de aparición. BDBV es la abreviatura establecida para el <em>Bundibugyo ebolavirus</em> en la literatura revisada por pares. El guión no es estilístico — es el separador estándar en todos los identificadores de enfermedad de la OMS.",
+    legalP1: "<strong style=\"color:var(--text2)\">Sin cookies · Sin seguimiento · Sin datos personales</strong> — RGPD (UE) 2016/679 · LOPD-GDD 3/2018 · Directiva ePrivacy 2002/58/CE",
+    legalP2: "Este sitio no recopila, almacena ni trata datos personales de ningún tipo. No se instala ninguna cookie. El feed de noticias se carga directamente en su navegador desde fuentes públicas. Para el aviso legal completo pulse <button onclick=\"openModal()\" style=\"background:none;border:none;color:var(--amber);cursor:pointer;font-family:var(--mono);font-size:11px;text-decoration:underline;padding:0\">AVISO LEGAL</button>.",
+    legalP3: "Fuentes oficiales: <a href=\"https://www.who.int\" target=\"_blank\" rel=\"noopener\">who.int</a> · <a href=\"https://www.cdc.gov\" target=\"_blank\" rel=\"noopener\">cdc.gov</a> · <a href=\"https://www.ecdc.europa.eu\" target=\"_blank\" rel=\"noopener\">ecdc.europa.eu</a> · <a href=\"https://www.mscbs.gob.es\" target=\"_blank\" rel=\"noopener\">mscbs.gob.es</a> · Emergencias: 112",
+    contact: "Contacto",
+    footerLegal: "Aviso Legal",
+    footCopy: "Agregador independiente de noticias públicas · No afiliado a ninguna autoridad sanitaria · Sin cookies · Sin datos personales · RGPD / LOPD-GDD 3/2018 · No es consejo médico · La OMS declaró PHEIC para BDBV el 17 de mayo de 2026 · Estadísticas: instantánea 16-17 mayo 2026, no automáticas · Todo el contenido enlazado © sus respectivos editores · © 2026 BDBV-26.COM",
+    loadingNews: "<span class=\"spinner\"></span>Cargando noticias...",
+    allShown: "Todos los resultados mostrados · Recarga la página para las últimas noticias",
+    allShown2: "Todos los resultados mostrados · Recarga para actualizar",
+    readArticle: "Leer artículo completo",
+    noNews: "No se encontraron noticias. Recarga la página o consulta directamente <a href=\"https://news.google.com/search?q=ebolavirus+Bundibugyo+BDBV+2026\" target=\"_blank\" rel=\"noopener\">Google News</a>.",
+    loadError: "No se pudo cargar el feed de noticias. Puede ser un problema temporal de red.<br>Recarga la página o visita <a href=\"https://news.google.com/search?q=ebolavirus+Bundibugyo+BDBV+2026\" target=\"_blank\" rel=\"noopener\">Google News directamente</a>."
+  }
+};
+
+var currentLang = 'en';
+
+function getQueries(){
+  if(currentLang === 'es'){
+    return [
+      'ebolavirus Bundibugyo 2026',
+      'BDBV Ebola Uganda Congo',
+      'brote Bundibugyo PHEIC'
+    ];
+  }
+  return [
+    'Bundibugyo ebolavirus BDBV 2026',
+    'BDBV Ebola DRC Uganda PHEIC',
+    'Bundibugyo virus outbreak 2026'
+  ];
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+  
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  
+  document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(function(el) {
+    el.classList.add('lang-fade');
+  });
+  
+  setTimeout(function() {
+    document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
+      if (key && i18n[lang][key]) {
+        el.innerHTML = i18n[lang][key];
+      }
+    });
+    document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(function(el) {
+      el.classList.remove('lang-fade');
+    });
+    setTime();
+  }, 200);
+  
+  reloadNews();
+}
+window.setLanguage = setLanguage;
+
+function reloadNews(){
+  // Reset state
+  allItems=[]; 
+  shown=0; 
+  loading=false; 
+  exhausted=false;
+  
+  // Clear grid and reset displays
+  grid.innerHTML='';
+  grid.style.display='none';
+  skel.style.display=''; // revert to CSS default (.skel-grid has display:grid)
+  
+  // Remove any old error messages
+  var oldErrs = document.querySelectorAll('.news-wrap .err-state');
+  oldErrs.forEach(function(el){ el.remove(); });
+  
+  loaderTxt.innerHTML=i18n[currentLang].loadingNews;
+  
+  // Stop observer during reload to prevent premature triggers
+  observer.unobserve(sentinel);
+  
+  var queries = getQueries();
+  console.log('Fetching news in', currentLang, 'queries:', queries);
+  
+  Promise.allSettled(queries.map(fetchRSS))
+    .then(function(results){
+      var merged=[];
+      results.forEach(function(r, i){
+        if(r.status==='fulfilled' && Array.isArray(r.value) && r.value.length>0){
+          merged=merged.concat(r.value);
+        } else {
+          console.warn('Query', queries[i], 'failed:', r.reason || 'empty');
+        }
+      });
+      var items = dedupe(merged).sort(function(a,b){
+        return new Date(b.pubDate || 0)-new Date(a.pubDate || 0);
+      });
+      
+      skel.style.display='none';
+      
+      if(!items.length){
+        grid.style.display='none';
+        grid.insertAdjacentHTML('afterend',
+          '<div class="err-state">'+i18n[currentLang].noNews+'</div>');
+        loaderTxt.innerHTML='';
+        return;
+      }
+      
+      grid.style.display='grid';
+      allItems=items;
+      showBatch();
+      observer.observe(sentinel);
+    })
+    .catch(function(err){
+      console.error('reloadNews error:', err);
+      skel.style.display='none';
+      grid.style.display='none';
+      document.querySelector('.news-wrap').insertAdjacentHTML('afterbegin',
+        '<div class="err-state">'+i18n[currentLang].loadError+'</div>');
+      loaderTxt.innerHTML='';
+    });
+}
+window.reloadNews = reloadNews;
+
+/* ── MODAL ───────────────────────────────────────── */
+function openModal(){
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+window.openModal=openModal;
+window.closeModal=closeModal;
+document.getElementById('modal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeModal();
+});
+
+/* ── HEADER TIME ─────────────────────────────────── */
+function setTime(){
+  var el=document.getElementById('hdr-time');
+  if(!el) return;
+  var locale = currentLang === 'es' ? 'es-ES' : 'en-US';
+  el.textContent=new Date().toLocaleString(locale,{
+    day:'2-digit',month:'short',year:'numeric',
+    hour:'2-digit',minute:'2-digit'
+  });
+}
+setTime();
+setInterval(setTime,60000);
+
+/* ── CONFIG ──────────────────────────────────────── */
+var QUERIES=[
+  'Bundibugyo ebolavirus BDBV 2026',
+  'BDBV Ebola DRC Uganda PHEIC',
+  'Bundibugyo virus outbreak 2026'
+];
+var RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
+var BATCH=6;
+var FETCH_TIMEOUT=10000;
+
+/* ── STATE ───────────────────────────────────────── */
+var allItems=[], shown=0, loading=false, exhausted=false;
+
+/* ── DOM ─────────────────────────────────────────── */
+var grid=document.getElementById('news-grid');
+var skel=document.getElementById('skeleton');
+var loaderTxt=document.getElementById('loader-txt');
+
+/* ── HELPERS ─────────────────────────────────────── */
+function fmtDate(s){
+  if(!s) return '';
+  try{
+    var locale = currentLang === 'es' ? 'es-ES' : 'en-US';
+    return new Date(s).toLocaleDateString(locale,{day:'2-digit',month:'short',year:'numeric'});
+  }catch(e){return s.substring(0,10)}
+}
+function stripHtml(h){
+  var d=document.createElement('div');
+  d.innerHTML=h;
+  return d.textContent||d.innerText||'';
+}
+function dedupe(arr){
+  var seen={};
+  return arr.filter(function(i){
+    if(seen[i.link]) return false;
+    seen[i.link]=1; return true;
+  });
+}
+
+/* ── FETCH ONE FEED via rss2json ─────────────────── */
+function fetchRSS(query){
+  var hl = currentLang === 'es' ? 'es' : 'en-US';
+  var gl = currentLang === 'es' ? 'ES' : 'US';
+  var ceid = currentLang === 'es' ? 'ES:es' : 'US:en';
+  var rssUrl = 'https://news.google.com/rss/search?q=' + encodeURIComponent(query) + '&hl=' + hl + '&gl=' + gl + '&ceid=' + ceid;
+  var apiUrl = RSS2JSON + encodeURIComponent(rssUrl);
+
+  return Promise.race([
+    fetch(apiUrl, {cache:'no-store'}),
+    new Promise(function(_, reject){
+      setTimeout(function(){ reject(new Error('Timeout')); }, FETCH_TIMEOUT);
+    })
+  ])
+  .then(function(r){
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return r.json();
+  })
+  .then(function(data){
+    if(data.status !== 'ok') throw new Error('RSS2JSON error: ' + (data.message || 'unknown'));
+    if(!data.items || !data.items.length) throw new Error('No items in feed');
+    return data.items.map(function(item){
+      return {
+        title: item.title || 'Untitled',
+        link: item.link || '#',
+        pubDate: item.pubDate || '',
+        source: item.author || 'Unknown source',
+        description: stripHtml(item.description || '')
+      };
+    });
+  });
+}
+
+/* ── FETCH ALL FEEDS ─────────────────────────────── */
+function fetchAll(){
+  return Promise.allSettled(QUERIES.map(fetchRSS))
+    .then(function(results){
+      var merged=[];
+      results.forEach(function(r, i){
+        if(r.status==='fulfilled' && Array.isArray(r.value) && r.value.length>0){
+          merged=merged.concat(r.value);
+        } else {
+          console.warn('Query', QUERIES[i], 'failed or empty:', r.reason || 'empty');
+        }
+      });
+      var deduped = dedupe(merged).sort(function(a,b){
+        return new Date(b.pubDate || 0)-new Date(a.pubDate || 0);
+      });
+      console.log('Total items fetched:', deduped.length);
+      return deduped;
+    });
+}
+
+/* ── RENDER CARD ─────────────────────────────────── */
+function renderCard(item){
+  var a=document.createElement('a');
+  a.className='ncard';
+  a.href=item.link;
+  a.target='_blank';
+  a.rel='noopener noreferrer';
+  
+  var desc=item.description?
+    '<p class="ndesc">'+item.description.substring(0,180)+'...</p>':'';
+  
+  // Build meta line only if source is real
+  var metaHtml = '';
+  if(item.source && item.source !== 'Unknown source' && item.source.trim() !== ''){
+    metaHtml =
+      '<div class="nmeta">'+
+        '<span class="nsrc">'+item.source+'</span>'+
+        '<span class="ndot">·</span>'+
+        '<span class="ndate">'+fmtDate(item.pubDate)+'</span>'+
+      '</div>';
+  } else {
+    metaHtml =
+      '<div class="nmeta">'+
+        '<span class="ndate">'+fmtDate(item.pubDate)+'</span>'+
+      '</div>';
+  }
+  
+  a.innerHTML= metaHtml +
+    '<p class="ntitle">'+item.title+'</p>'+
+    desc+
+    '<span class="nlink">'+i18n[currentLang].readArticle+'</span>';
+  return a;
+}
+
+/* ── SHOW BATCH ──────────────────────────────────── */
+function showBatch(){
+  if(loading||exhausted) return;
+  loading=true;
+  var slice=allItems.slice(shown,shown+BATCH);
+  if(!slice.length){
+    exhausted=true;
+    loaderTxt.innerHTML=i18n[currentLang].allShown;
+    loading=false; return;
+  }
+  slice.forEach(function(item){ grid.appendChild(renderCard(item)); });
+  shown+=slice.length;
+  if(shown>=allItems.length){
+    exhausted=true;
+    loaderTxt.innerHTML=i18n[currentLang].allShown2;
+  } else {
+    loaderTxt.innerHTML='';
+  }
+  loading=false;
+}
+
+/* ── INTERSECTION OBSERVER ───────────────────────── */
+var sentinel=document.getElementById('sentinel');
+var observer=new IntersectionObserver(function(entries){
+  if(entries[0].isIntersecting&&!loading&&!exhausted) showBatch();
+},{rootMargin:'200px'});
+
+/* ── INIT ────────────────────────────────────────── */
+loaderTxt.innerHTML=i18n[currentLang].loadingNews;
+fetchAll().then(function(items){
+  skel.style.display='none';
+  grid.style.display='grid';
+  if(!items.length){
+    grid.style.display='none';
+    grid.insertAdjacentHTML('afterend',
+      '<div class="err-state">'+i18n[currentLang].noNews+'</div>');
+    loaderTxt.innerHTML='';
+    return;
+  }
+  allItems=items;
+  showBatch();
+  observer.observe(sentinel);
+}).catch(function(err){
+  skel.style.display='none';
+  grid.style.display='none';
+  document.querySelector('.news-wrap').insertAdjacentHTML('afterbegin',
+    '<div class="err-state">'+i18n[currentLang].loadError+'</div>');
+  loaderTxt.innerHTML='';
+});
+
+})();
+</script>
+</body>
+</html>
